@@ -1,0 +1,16 @@
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\config\DdlFixConfig.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\entity\DocumentChunk.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\mapper\DocumentChunkMapper.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\entity\Document.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\mapper\DocumentMapper.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\mapper\ChatHistoryMapper.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\service\DocumentService.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\dto\ChatRequest.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\dto\ChatResponse.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\AiRagApplication.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\entity\ChatHistory.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\service\EmbeddingService.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\dto\DocumentUploadResponse.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\controller\RAGController.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\service\AIService.java
+D:\ch7\AgentApplication\AiRagAssistant\src\main\java\com\example\airag\service\RAGService.java
