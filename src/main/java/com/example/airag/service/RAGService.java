@@ -82,7 +82,34 @@ public class RAGService {
         // 5. 获取历史对话
         List<ChatHistory> history = chatHistoryMapper.selectBySession(sessionId);
 
-        // 6. AI 生成回答
+        // 6. 幻觉控制：如果检索结果为空，拒绝回答
+        if (topChunks.isEmpty()) {
+            log.warn("检索结果为空，问题: {}, 拒绝回答", question);
+            
+            ChatResponse response = ChatResponse.builder()
+                    .answer("抱歉，根据现有文档，我无法回答这个问题。请尝试上传相关文档或换个问法。")
+                    .sources(Collections.emptyList())
+                    .sessionId(sessionId)
+                    .build();
+            
+            // 保存对话
+            ChatHistory userMsg = new ChatHistory();
+            userMsg.setSessionId(sessionId);
+            userMsg.setRole("user");
+            userMsg.setContent(question);
+            chatHistoryMapper.insert(userMsg);
+            
+            ChatHistory assistantMsg = new ChatHistory();
+            assistantMsg.setSessionId(sessionId);
+            assistantMsg.setRole("assistant");
+            assistantMsg.setContent(response.getAnswer());
+            assistantMsg.setSources("[]");
+            chatHistoryMapper.insert(assistantMsg);
+            
+            return response;
+        }
+        
+        // 7. AI 生成回答
         String answer = aiService.generateAnswer(context, question, history);
 
         // 7. 保存对话

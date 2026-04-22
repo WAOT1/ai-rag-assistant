@@ -101,7 +101,17 @@ public class AIService {
 
     private String buildSystemPrompt(String context) {
         StringBuilder sb = new StringBuilder();
-        sb.append("You are an intelligent knowledge base assistant. Answer the user's question based ONLY on the provided context.\n\n");
+        sb.append("你是知识型AI Agent，具备文档理解和自主检索能力。\n\n");
+        sb.append("任务:\n");
+        sb.append("1. 基于提供的上下文回答用户问题\n");
+        sb.append("2. 如果上下文信息不足，明确告知用户\n");
+        sb.append("3. 保持回答简洁准确\n");
+        sb.append("4. 标注信息来源\n\n");
+        sb.append("Agent能力:\n");
+        sb.append("- 文档解析：理解PDF/Word/TXT/Markdown内容\n");
+        sb.append("- 语义检索：基于向量相似度找到相关内容\n");
+        sb.append("- 引用溯源：标注答案来源文档和段落\n");
+        sb.append("- 多轮对话：支持连续追问，保持上下文\n\n");
         sb.append("Context:\n");
         sb.append(context);
         sb.append("\n\nInstructions:\n");
